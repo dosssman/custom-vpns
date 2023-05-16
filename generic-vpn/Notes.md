@@ -28,7 +28,8 @@ Notes regaring the procedure to generate server and client files certificates, k
 - Decompress password locked archive
 
 ```bash
-7z x -p"notpassword" -mhe=on -o"client-default-decomp" -r client-default.7z
+# NOTE: will override existing folder and files
+7z x -p"notpassword" -o"." -r client-default.7z
 ```
 
 ### vultr-cli related
@@ -39,7 +40,7 @@ Notes regaring the procedure to generate server and client files certificates, k
 vultr-cli instance create -o <osId> --p <planId> --r <regionId> -s <sshId_0,sshId_1> --script-id <scriptId_0,scriptId_1> -l <label>
 
 # JP Server VPN Node example
-vultr-cli instance create -o 1743 -p "vc2-1c-1gb" -r nrt -l "GenericVPN-JP" -s "a6fb92f8-b8d1-47c9-9511-8f2dc116714b,6bc9749a-ad09-4d35-add4-fc41afeb8341"
+vultr-cli instance create -o 387 -p "vc2-1c-1gb" -r nrt -l "GenericVPN-JP" -s "a6fb92f8-b8d1-47c9-9511-8f2dc116714b,6bc9749a-ad09-4d35-add4-fc41afeb8341" --script-id "18a18387-c4ec-4c0a-8fcd-d1151486fa27"
 ```
 
 **PKI Certificate Auth. Info @2023-05-16**
