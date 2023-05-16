@@ -1,0 +1,4 @@
+generic-vpn/pki
+generic-vpn/openvpn-configs/client-default
+generic-vpn/openvpn-configs/server-default
+generic-vpn/openvpn-configs/server-jp
