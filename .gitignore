@@ -1,4 +1,6 @@
+.vscode
 generic-vpn/pki
+generic-vpn/x509-types
 generic-vpn/openvpn-configs/client-default
 generic-vpn/openvpn-configs/server-default
 generic-vpn/openvpn-configs/server-jp
