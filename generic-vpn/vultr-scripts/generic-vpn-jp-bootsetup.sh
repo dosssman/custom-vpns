@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Installing dependencies
+apt-get update
 apt-get install openvpn easy-rsa p7zip-full -y
 cd
 git clone https://github.com/dosssman/custom-vpns.git
