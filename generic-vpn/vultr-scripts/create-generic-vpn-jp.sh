@@ -11,8 +11,15 @@ if [ -n "${INSTANCE_INFO}" ]; then
 else
     echo "Instance not detected. Proceeding to creation."
 
-    NEW_INSTANCE_INFO=$(vultr-cli instance create -o 387 -p "vc2-1c-1gb" -r nrt -l "GenericVPN-JP" -s "a6fb92f8-b8d1-47c9-9511-8f2dc116714b,6bc9749a-ad09-4d35-add4-fc41afeb8341" --script-id "18a18387-c4ec-4c0a-8fcd-d1151486fa27")
-    
+    NEW_INSTANCE_INFO=$(vultr-cli instance create \
+        -l "GenericVPN-JP"\
+        -s "a6fb92f8-b8d1-47c9-9511-8f2dc116714b,6bc9749a-ad09-4d35-add4-fc41afeb8341" \
+        --os 387 \
+        --region nrt \
+        --plan "vc2-1c-1gb" \
+        --script-id "18a18387-c4ec-4c0a-8fcd-d1151486fa27" \
+    )
+
     # Recover Instance ID
     INSTANCE_INFO=$(vultr-cli instance list | grep -i "GenericVPN-JP")
     INSTANCE_ID=$(echo $INSTANCE_INFO | awk '{print $1}')
